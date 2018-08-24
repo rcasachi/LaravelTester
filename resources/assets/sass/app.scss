@@ -8,3 +8,8 @@
 // Frameworks
 @import "node_modules/bulma/bulma";
 @import "node_modules/buefy/src/scss/buefy";
+
+// Customs Styles
+@import "overrides";
+@import "helpers";
+@import "styles";

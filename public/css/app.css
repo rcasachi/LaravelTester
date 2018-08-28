@@ -3467,7 +3467,7 @@ th {
 }
 
 html {
-  background-color: white;
+  background-color: whitesmoke;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -8865,7 +8865,7 @@ a.box:active {
 }
 
 .tag:not(body).is-delete:active {
-  background-color: #dbdbdb;
+  background-color: #dcdbdb;
 }
 
 .tag:not(body).is-rounded {
@@ -18010,5 +18010,15 @@ button.navbar-item.is-tab.is-active {
 
 .p-r-100 {
   padding-right: 100px !important;
+}
+
+/*Muted class*/
+
+.is-muted {
+  color: #b5b5b5 !important;
+}
+
+a.is-muted:hover {
+  color: #7a7a7a !important;
 }
 

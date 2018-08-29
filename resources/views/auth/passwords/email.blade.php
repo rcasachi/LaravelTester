@@ -25,7 +25,7 @@
                     <p class="help is-danger">{{ $errors->first('email') }}</p>
                   @endif
                 </div>
-                <button class="button is-primary is-outlined is-fullwidth m-t-30">Get Reset Link</button>
+                <button class="button is-success is-outlined is-fullwidth m-t-30">Get Reset Link</button>
               </form>
             </div><!--/ .card-content-->
           </div><!--/ .card -->

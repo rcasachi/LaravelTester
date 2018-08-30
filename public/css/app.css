@@ -17550,6 +17550,17 @@ label.panel-block:hover {
   overflow-y: auto;
 }
 
+.management-area {
+  position: absolute;
+  top: 4em;
+  left: 200px;
+  right: 0;
+}
+
+.flex-container {
+  margin: 10px 25px;
+}
+
 .dropdown {
   position: relative;
 }

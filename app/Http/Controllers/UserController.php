@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
       // $users = User::all();
-      $users = User::orderBy('id', 'desc')->paginate(2);
+      $users = User::orderBy('id', 'desc')->paginate(10);
       return view('manage.users.index')->withUsers($users);
     }
 
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+      return view('manage.users.create');
     }
 
     /**
@@ -37,7 +37,29 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+        'name' => 'required|max:255',
+        'email' => 'required|email|unique:users'
+      ]);
+
+      if(Request::has('password') && !empty($request->password)){
+        $password = trim($request->password);
+      }else{
+        $length = 10;
+        $keyspace = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
+        $str = '';
+        $max = mb_strlen($keyspace, '8bit') - 1;
+        for($i=0; $i < $length; $i++){
+          $str .= $keyspace[random_int(0,$max)];
+        }
+        $password = $str;
+      }
+
+      $user = new User();
+      $user->name = $request->name;
+      $user->email = $request->email;
+      $user->password = Hash::make($password);
+      $user->save();
     }
 
     /**

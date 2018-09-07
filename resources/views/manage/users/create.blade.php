@@ -11,6 +11,7 @@
     <div class="columns">
       <div class="column">
         <form action="{{ route('users.store') }}" method="POST">
+          {{ csrf_field() }}
           <div class="field">
             <label for="name" class="label">Name</label>
             <p class="control">
@@ -28,8 +29,8 @@
           <div class="field">
             <label for="password" class="label">Password</label>
             <p class="control">
-              <input type="password" name="password" class="input" id="password" v-if="auto_password">
-              <b-checkbox name="auto_generate" class="m-t-10" :checked="true" v-model="auto_password">Auto Generate Password</b-checkbox>
+              <input type="password" name="password" class="input" id="password" v-if="!auto_password">
+              <b-checkbox name="auto_generate" class="m-t-10" v-model="auto_password">Auto Generate Password</b-checkbox>
             </p>
           </div>
 

@@ -20,7 +20,7 @@
               <th>Name</th>
               <th>Email</th>
               <th>Date Created</th>
-              <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -30,8 +30,9 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->created_at->toFormattedDateString() }}</td>
-                <td>
-                  <a href="{{ route('users.edit', $user->id) }}" class="button is-outlined">Edit</a>
+                <td class="has-text-right">
+                  <a class="button is-outlined m-r-5" href="{{route('users.show', $user->id)}}">View</a>
+                  <a class="button is-light" href="{{route('users.edit', $user->id)}}">Edit</a>
                 </td>
               </tr>
             @endforeach
